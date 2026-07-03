@@ -1,0 +1,60 @@
+Comp Proprietary Software License
+
+Copyright (c) 2026 Comp project authors. All rights reserved.
+
+This license applies only to the proprietary Comp application code and other
+Comp-authored materials that are not covered by a separate license notice.
+
+1. License Grant
+
+Subject to any separate written agreement between you and the Comp copyright
+holders, you may install and use the Comp application for its intended purpose
+on systems you control.
+
+2. Restrictions
+
+Except where a separate written agreement, applicable law, or a third-party
+license expressly permits it, you may not:
+
+- copy, redistribute, publish, sublicense, sell, rent, lease, or host Comp for
+  third-party use;
+- modify, adapt, translate, or create derivative works of Comp;
+- reverse engineer, decompile, or disassemble Comp;
+- remove copyright, trademark, license, or attribution notices from Comp;
+- use Comp to violate applicable law or third-party rights.
+
+3. Third-Party Software
+
+Comp includes and/or is distributed with third-party software components. Those
+components are not licensed under this Comp proprietary license. They remain
+subject to their own licenses and notices, which are provided with the
+application package under the legal/ directory.
+
+Nothing in this license limits rights that cannot be waived under applicable
+law or rights granted directly by third-party licenses for third-party
+components, including open-source library licenses.
+
+4. Ownership
+
+Comp is licensed, not sold. The Comp copyright holders retain all rights, title,
+and interest in and to Comp except for the limited rights expressly granted by
+this license or by a separate written agreement.
+
+5. No Warranty
+
+Comp is provided "as is" and "as available", without warranties of any kind,
+whether express, implied, statutory, or otherwise, including warranties of
+merchantability, fitness for a particular purpose, title, and non-infringement.
+
+6. Limitation of Liability
+
+To the maximum extent permitted by applicable law, the Comp copyright holders
+and contributors will not be liable for any indirect, incidental, special,
+consequential, exemplary, or punitive damages, or for loss of profits, revenue,
+data, goodwill, or business opportunity, arising from or related to Comp.
+
+7. Separate Agreements
+
+If you received Comp under a signed written agreement, purchase agreement,
+enterprise agreement, beta agreement, or other separate license terms, that
+agreement controls to the extent it conflicts with this license.
