@@ -231,7 +231,3 @@ Release packages include the application archive and SHA256 checksums.
 - Buy Me a Coffee: https://buymeacoffee.com/yuri.r
 - Discord: https://discord.gg/caJSDWwXX
 
-## License
-
-See [LICENSE](LICENSE) and the package legal notices for Comp and bundled
-third-party dependency terms.
