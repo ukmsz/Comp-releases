@@ -14,10 +14,7 @@ Your feedback will help define the direction of future development, as well as t
 
 ## Supported platforms
 
-At the moment, **Comp** is available for:
-
-- Windows x64
-- macOS arm64
+At the moment, **Comp** is available for Windows x64 and macOS arm64
 
 A Linux build is also planned. Before starting the Linux port, I would like to reach a stable MVP on the current platforms and use that version as a baseline for parity testing.
 
@@ -44,11 +41,7 @@ This means that the worker service does not require setting up the original full
 
 The AI Worker Service can run on both CPU and GPU. For obvious reasons, GPU processing is much faster.
 
-Supported targets:
-
-- CPU
-- CUDA
-- MPS
+Supported targets: CPU | CUDA | MPS
 
 It is also possible to run the service with 16 GB of VRAM by using launch flags that limit the frame-history depth used by the neural networks.
 
@@ -78,13 +71,7 @@ I have not yet chosen the backend for GPU compositing. The cross-platform **Qt R
 
 One possible option would be to simply not support GPU acceleration in headless mode, but this is still open for discussion.
 
-A more hardcore option would be to write three separate implementations for:
-
-- Metal
-- Vulkan
-- CUDA
-
-This would provide speed, flexibility, and fewer limitations. However, before doing that, the current feature set needs to be stabilized so that rendering is predictable and can be used as a reference for comparison with the GPU implementation.
+A more hardcore option would be to write three separate implementations for Metal, Vulkan and CUDA, this would provide speed, flexibility, and fewer limitations. However, before doing that, the current feature set needs to be stabilized so that rendering is predictable and can be used as a reference for comparison with the GPU implementation.
 
 ## Approximate roadmap for Comp
 
@@ -113,7 +100,7 @@ Place the files in the folders shown below.
 Folder:
 
 ```text
-<comp-root>/worker/family_bundles/mat2/models
+<worker-instalation-root>/family_bundles/mat2/models
 ```
 
 Download:
@@ -127,7 +114,7 @@ https://huggingface.co/kamaz01/MatAnyone2/blob/main/mat2_bundle.pt
 Folder:
 
 ```text
-<comp-root>/worker/family_bundles/sam3/assets
+<worker-instalation-root>/family_bundles/sam3/assets
 ```
 
 Download:
@@ -141,7 +128,7 @@ https://github.com/facebookresearch/sam3/blob/main/sam3/assets/bpe_simple_vocab_
 Folder:
 
 ```text
-<comp-root>/worker/family_bundles/sam3/models
+<worker-instalation-root>/family_bundles/sam3/models
 ```
 
 Download:
@@ -161,9 +148,9 @@ sam3_bundle.pt
 Example command for launching the worker in `serve` mode with reduced VRAM usage:
 
 ```bash
-<path-to-worker-executable> serve \
-  --family-bundle mat2=<path-to-family-bundles>/mat2 \
-  --family-bundle sam3=<path-to-family-bundles>/sam3 \
+<worker-instalation-path>\worker serve \
+  --family-bundle mat2=<worker-instalation-path>/family_bundles/mat2 \
+  --family-bundle sam3=<worker-instalation-path>/family_bundles/sam3 \
   --target cuda \
   --bind-host 127.0.0.1 \
   --port 19282 \
@@ -174,11 +161,7 @@ Example command for launching the worker in `serve` mode with reduced VRAM usage
   --max-mem-frames 2
 ```
 
-On macOS, use `mps` instead of `cuda`:
-
-```bash
---target mps
-```
+On macOS, use `--target mps` instead of `--target cuda`.
 
 Replace all placeholder paths with paths that match your local installation.
 
