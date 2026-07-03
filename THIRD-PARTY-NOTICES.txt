@@ -1,0 +1,91 @@
+Comp Third-Party Notices
+
+This file applies to distributed Comp application packages. It identifies
+third-party software that may be included in, linked by, or distributed with
+the Comp desktop application.
+
+This file does not license the proprietary Comp application code. See
+COMP-LICENSE.txt for the Comp application license. Third-party software is
+licensed by its own copyright holders under its own terms.
+
+License texts, copyright files, compact package-manager license declarations,
+and package-manager notices are copied into the licenses/ directory beside this
+file when a release package is built. The package manifests under licenses/
+record which package-manager entries were matched to runtime files bundled with
+Comp.
+
+Direct Application Dependencies
+
+Component: Qt 6
+Use: GUI framework, widgets, rendering integration, network support, SVG/icon
+support, shader tooling, platform plugins, and image plugins.
+License: Qt modules are distributed under the licenses supplied by the Qt
+package, commonly LGPL/GPL/commercial depending on module and distribution
+choice.
+Package license files: licenses/qt or licenses/homebrew/qt* on macOS;
+licenses/qt and/or licenses/vcpkg/qt*-copyright.txt on Windows when present.
+
+Component: Qt Advanced Docking System
+Use: Docking user interface.
+License: GNU Lesser General Public License version 2.1 as supplied by the
+upstream package. The library is distributed as a dynamic library in Comp
+packages.
+Package license file: licenses/fetchcontent/qt-advanced-docking-system-LGPL-2.1.txt
+
+Component: OpenCV
+Use: Image processing, geometry, image I/O helpers, feature tracking, optical
+flow, and related runtime libraries.
+License: Apache License 2.0 for OpenCV, plus notices for bundled OpenCV
+third-party components as supplied by the OpenCV package.
+Package license files: licenses/homebrew/opencv or
+licenses/vcpkg/opencv4-copyright.txt.
+
+Component: nlohmann/json
+Use: JSON serialization and parsing.
+License: MIT License.
+Package license file: licenses/fetchcontent/nlohmann-json-MIT.txt
+
+Component: ExprTk
+Use: Header-only expression engine.
+License: MIT License.
+Package license files: licenses/fetchcontent/exprtk-* when downloaded by
+CMake, or the package-manager license files for the provider when supplied by
+another dependency package.
+
+Component: Tcl/Tk Tcl library
+Use: Optional Tcl expression backend and Tcl runtime scripts.
+License: Tcl/Tk permissive license as supplied by the Tcl package.
+Package license files: licenses/homebrew/tcl-tk or
+licenses/vcpkg/tcl-copyright.txt.
+
+Component: OpenEXR and Imath
+Use: Optional EXR image I/O.
+License: BSD-style licenses as supplied by the packages.
+Package license files: licenses/homebrew/openexr,
+licenses/homebrew/imath, licenses/vcpkg/openexr-copyright.txt, and/or
+licenses/vcpkg/imath-copyright.txt.
+
+Component: OpenMP runtime
+Use: Parallel execution support.
+License: Runtime-specific license supplied by the package. macOS Homebrew
+packages commonly provide LLVM libomp under Apache-2.0 with LLVM exceptions;
+GCC runtime libraries are supplied with GCC runtime exception notices.
+Package license files: licenses/homebrew/libomp, licenses/homebrew/gcc, or
+the matching vcpkg runtime copyright files when present.
+
+Transitive Runtime Dependencies
+
+The application package may include additional runtime libraries pulled in by
+Qt, OpenCV, OpenEXR, Tcl, compiler runtimes, image/video codecs, compression
+libraries, math libraries, and platform plugins. Their package-provided
+license/copyright/declaration files are copied into:
+
+- licenses/homebrew/ on macOS packages built from Homebrew dependencies;
+- licenses/vcpkg/ on Windows packages built from vcpkg dependencies;
+- licenses/fetchcontent/ for CMake FetchContent dependencies.
+
+System Libraries
+
+The package may link to operating-system libraries and frameworks provided by
+macOS or Windows. Those components are supplied under the operating system's
+own terms and are not copied into the licenses/ directory.
