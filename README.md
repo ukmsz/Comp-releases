@@ -12,6 +12,20 @@ I have been working on **Comp** for more than a year and a half. This release st
 
 Your feedback will help define the direction of future development, as well as the pace at which the project can move forward.
 
+## Downloads
+
+Packaged testing releases are published here:
+
+https://github.com/ukmsz/Comp-releases/releases
+
+Scroll down for the links to the models’ weights.
+
+## Community and Support
+
+- LinkedIn: https://www.linkedin.com/in/yuri-radaev
+- Buy Me a Coffee: https://buymeacoffee.com/yuri.r
+- Discord: https://discord.gg/caJSDWwXX
+
 ## Supported platforms
 
 At the moment, **Comp** is available for Windows x64 and macOS arm64
@@ -215,19 +229,5 @@ You can still launch the application by explicitly allowing it to run in the sam
 [openmp]: https://www.openmp.org/specifications/
 
 
-## Downloads
 
-Packaged testing releases are published here:
-
-```text
-https://github.com/ukmsz/Comp-releases/releases
-```
-
-Release packages include the application archive and SHA256 checksums.
-
-## Community and Support
-
-- LinkedIn: https://www.linkedin.com/in/yuri-radaev
-- Buy Me a Coffee: https://buymeacoffee.com/yuri.r
-- Discord: https://discord.gg/caJSDWwXX
 
