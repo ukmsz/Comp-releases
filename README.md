@@ -79,8 +79,8 @@ The current Worker release is **v0.1.0**.
 | Module | Download | Destination | Final filename |
 |---|---|---|---|
 | MatAnyone2 | [Download `mat2_bundle.pt`](https://huggingface.co/kamaz01/MatAnyone2/resolve/main/mat2_bundle.pt?download=true) | `<worker-installation-root>/family_bundles/mat2/models/` | `mat2_bundle.pt` |
-| SAM3 tokenizer | [Download `bpe_simple_vocab_16e6.txt.gz`](https://github.com/facebookresearch/sam3/raw/refs/heads/main/sam3/assets/bpe_simple_vocab_16e6.txt.gz) | `<worker-installation-root>/family_bundles/sam3/assets/` | `bpe_simple_vocab_16e6.txt.gz` |
-| SAM3.1 model | [Download `sam3.1_multiplex.pt`](https://huggingface.co/facebook/sam3.1/resolve/main/sam3.1_multiplex.pt?download=true) | `<worker-installation-root>/family_bundles/sam3/models/` | Rename to `sam3_bundle.pt` |
+| SAM3 tokenizer | [Download `bpe_simple_vocab_16e6.txt.gz`](https://huggingface.co/kamaz01/CompAutoMatte_sam3/resolve/main/bpe_simple_vocab_16e6.txt.gz?download=true) | `<worker-installation-root>/family_bundles/sam3/assets/` | `bpe_simple_vocab_16e6.txt.gz` |
+| SAM3.1 model | [Download `sam3_bundle.pt`](https://huggingface.co/kamaz01/CompAutoMatte_sam3/resolve/main/sam3_bundle.pt?download=true) | `<worker-installation-root>/family_bundles/sam3/models/` | `sam3_bundle.pt` |
 
 The resulting directory structure should look like this:
 
