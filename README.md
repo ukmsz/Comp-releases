@@ -12,19 +12,133 @@ I have been working on **Comp** for more than a year and a half. This release st
 
 Your feedback will help define the direction of future development, as well as the pace at which the project can move forward.
 
-## Downloads
-
-Packaged testing releases are published here:
-
-https://github.com/ukmsz/Comp-releases/releases
-
-Scroll down for the links to the models’ weights.
-
 ## Community and Support
 
 - LinkedIn: https://www.linkedin.com/in/yuri-radaev
 - Buy Me a Coffee: https://buymeacoffee.com/yuri.r
 - Discord: https://discord.gg/caJSDWwXX
+
+## Downloads
+
+The current public alpha is **Comp v0.1.1**, released on July 14, 2026.
+
+### Comp application
+
+| Platform | Recommended download | Alternative package | SHA-256 checksums |
+|---|---|---|---|
+| Windows x64 | [Comp v0.1.1 — ZIP, 50.9 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-Release-20260714-1239.zip) | — | [Windows checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-Windows-SHA256SUMS.txt) |
+| macOS arm64 | [Comp v0.1.1 — DMG, 77.4 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-macOS-20260714-1235.dmg) | [ZIP, 67.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-macOS-20260714-1235.zip) | [macOS checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-macOS-SHA256SUMS.txt) |
+
+- **Windows:** extract the ZIP before running Comp. The current build is
+  unsigned, so Windows may display a security warning. Verify the downloaded
+  file using the published checksum before allowing it to run.
+- **macOS:** the DMG is recommended for normal installation. The ZIP is
+  provided as an alternative package.
+- **AI features:** Comp itself does not require the AI Worker. Download the
+  Worker only if you specifically want to test the AI modules described below.
+
+[View the Comp v0.1.1 release page](https://github.com/ukmsz/Comp-releases/releases/tag/comp-v0.1.1)  
+[View all releases](https://github.com/ukmsz/Comp-releases/releases)
+
+
+## Optional: Comp AI Worker Service
+
+Comp can be used as a standalone compositor. You do **not** need the AI Worker
+for standard compositing operations.
+
+The **Comp AI Worker Service** is a separate command-line component used by
+the optional AI modules currently available in Comp:
+
+- **SAM3** — rough image segmentation;
+- **MatAnyone2** — mask-edge refinement.
+
+For the simplest setup, run Comp and the Worker on the same machine. The Worker
+can also accept requests over a local network, but transferring image frames
+between machines may add significant overhead.
+
+### Worker downloads
+
+The current Worker release is **v0.1.0**.
+
+| Platform | Recommended download | Alternative package | SHA-256 checksums |
+|---|---|---|---|
+| Windows, CPU/CUDA | [Worker v0.1.0 — ZIP, 1.71 GB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-Windows-CPU-CUDA-local-20260703-1158.zip) | — | [Windows checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-Windows-SHA256SUMS.txt) |
+| macOS, CPU/MPS | [Worker v0.1.0 — DMG, 47.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-macOS-20260703-1049.dmg) | [ZIP, 39.9 MB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-macOS-20260703-1049.zip) | [macOS checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-macOS-SHA256SUMS.txt) |
+
+[View the Worker v0.1.0 release page](https://github.com/ukmsz/Comp-releases/releases/tag/worker-v0.1.0)
+
+
+> [!IMPORTANT]
+> Neural-network model weights are not included in the Worker packages.
+> Download the required files separately and place them in the folders shown
+> below.
+
+
+### Required model files
+
+| Module | Download | Destination | Final filename |
+|---|---|---|---|
+| MatAnyone2 | [Download `mat2_bundle.pt`](https://huggingface.co/kamaz01/MatAnyone2/resolve/main/mat2_bundle.pt?download=true) | `<worker-installation-root>/family_bundles/mat2/models/` | `mat2_bundle.pt` |
+| SAM3 tokenizer | [Download `bpe_simple_vocab_16e6.txt.gz`](https://github.com/facebookresearch/sam3/raw/refs/heads/main/sam3/assets/bpe_simple_vocab_16e6.txt.gz) | `<worker-installation-root>/family_bundles/sam3/assets/` | `bpe_simple_vocab_16e6.txt.gz` |
+| SAM3.1 model | [Download `sam3.1_multiplex.pt`](https://huggingface.co/facebook/sam3.1/resolve/main/sam3.1_multiplex.pt?download=true) | `<worker-installation-root>/family_bundles/sam3/models/` | Rename to `sam3_bundle.pt` |
+
+The resulting directory structure should look like this:
+
+```text
+<worker-installation-root>/
+└── family_bundles/
+    ├── mat2/
+    │   └── models/
+    │       └── mat2_bundle.pt
+    └── sam3/
+        ├── assets/
+        │   └── bpe_simple_vocab_16e6.txt.gz
+        └── models/
+            └── sam3_bundle.pt
+```
+
+If Hugging Face asks you to sign in, request access, or accept model repository
+conditions, complete that step before downloading the file.
+
+Third-party model files have their own licenses and access conditions. Review
+those conditions before downloading or using the models.
+
+
+### Starting the Worker
+
+Replace the placeholder paths and `TARGET` in the following example:
+
+```text
+"<path-to-worker-executable>" serve \
+  --family-bundle "mat2=<worker-installation-root>/family_bundles/mat2" \
+  --family-bundle "sam3=<worker-installation-root>/family_bundles/sam3" \
+  --target TARGET \
+  --bind-host 127.0.0.1 \
+  --port 19282 \
+  --temp-dir "<path-to-temp-directory>/comp-worker" \
+  --cpu-threads 0 \
+  --verbose
+```
+
+Use one of the following target values:
+
+- `cuda` — NVIDIA GPU;
+- `mps` — Apple GPU on macOS;
+- `cpu` — CPU processing.
+
+The example uses `127.0.0.1`, which makes the Worker accessible only from the
+same machine.
+
+For a reduced-memory test, add:
+
+```text
+--max-propagation-history-depth 2
+--max-mem-frames 2
+```
+
+The command above uses Unix-style line continuation. In PowerShell, either put
+the command on one line or replace each trailing `\` with a PowerShell
+backtick.
 
 ## Supported platforms
 
@@ -35,47 +149,6 @@ A Linux build is also planned. Before starting the Linux port, I would like to r
 The Windows build may work through Wine, but I have not tested this.
 
 Development is currently done mostly on macOS. From time to time, I also use my old Windows PC to build and test the Windows version.
-
-## Comp AI Worker Service
-
-**Comp** is a standalone application that can also work as a client for a second component: **Comp AI Worker Service**.
-
-The AI Worker Service is a separate command-line service that can process request queues over a local network. These requests are routed to neural network modules built into the service.
-
-Currently, two modules are included:
-
-- **Facebook/SAM3** — rough image segmentation
-- **MatAnyone2** — mask edge refinement
-
-These modules are C++ implementations of the corresponding inference pipelines, built using **libtorch**.
-
-This means that the worker service does not require setting up the original full inference projects, installing Python, or managing a large number of dependencies. However, you still need to place the model weights and tokenizer files into the corresponding folders. Download links are listed below.
-
-## CPU and GPU support
-
-The AI Worker Service can run on both CPU and GPU. For obvious reasons, GPU processing is much faster.
-
-Supported targets: CPU | CUDA | MPS
-
-It is also possible to run the service with 16 GB of VRAM by using launch flags that limit the frame-history depth used by the neural networks.
-
-I have not tested the service on 8 GB of VRAM.
-
-In general, if a task does not fully fit into GPU memory, parts of it will be copied to CPU memory and processing will become very slow.
-
-## Network usage
-
-The AI Worker Service can serve multiple clients from different IP addresses. All requests are placed into a queue and returned to clients when they are ready.
-
-However, network-based processing requires sending all frames for a task back and forth. These transfer costs alone may exceed the actual processing time.
-
-The fastest setup is to run **Comp** and the AI Worker Service on the same machine. However, this requires enough RAM for both **Comp** cached playback and the AI Worker Service.
-
-Background processing may also slow down compositing work running in parallel. **Comp** does not wait for the AI Worker Service to finish — you can continue editing your script while a task is being processed.
-
-This split architecture, where AI functionality and compositing functionality are separated into two different applications, helps with stability, isolation, and collaborative workflows.
-
-That said, built-in inference directly inside **Comp** would be noticeably faster and more convenient. On the other hand, it would likely be less stable and would increase workstation requirements. At the moment, it is still an open question which approach would be more beneficial for a typical **Comp** user.
 
 ## GPU rendering
 
@@ -104,88 +177,6 @@ A more hardcore option would be to write three separate implementations for Meta
 - Finish implementing two new modules:
   - Corridor Crew keyer
   - DVD depth estimator
-
-## Model weights
-
-Place the files in the folders shown below.
-
-### MatAnyone2 bundle
-
-Folder:
-
-```text
-<worker-instalation-root>/family_bundles/mat2/models
-```
-
-Download:
-
-```text
-https://huggingface.co/kamaz01/MatAnyone2/blob/main/mat2_bundle.pt
-```
-
-### SAM3 tokenizer
-
-Folder:
-
-```text
-<worker-instalation-root>/family_bundles/sam3/assets
-```
-
-Download:
-
-```text
-https://github.com/facebookresearch/sam3/blob/main/sam3/assets/bpe_simple_vocab_16e6.txt.gz
-```
-
-### SAM3 model
-
-Folder:
-
-```text
-<worker-instalation-root>/family_bundles/sam3/models
-```
-
-Download:
-
-```text
-https://huggingface.co/facebook/sam3.1/blob/main/sam3.1_multiplex.pt
-```
-
-Before placing this file into the `models` folder, rename it to:
-
-```text
-sam3_bundle.pt
-```
-
-## Example worker launch command
-
-Example command for launching the worker in `serve` mode with reduced VRAM usage:
-
-```bash
-<worker-instalation-path>\worker serve \
-  --family-bundle mat2=<worker-instalation-path>/family_bundles/mat2 \
-  --family-bundle sam3=<worker-instalation-path>/family_bundles/sam3 \
-  --target cuda \
-  --bind-host 127.0.0.1 \
-  --port 19282 \
-  --temp-dir <path-to-temp-dir>/worker_service \
-  --cpu-threads 0 \
-  --verbose \
-  --max-propagation-history-depth 2 \
-  --max-mem-frames 2
-```
-
-On macOS, use `--target mps` instead of `--target cuda`.
-
-Replace all placeholder paths with paths that match your local installation.
-
-## Windows security warning
-
-If you run the application on Windows, you may see a warning that the app has been blocked from launching.
-
-This happens because the application is currently unsigned. I do not have a code-signing certificate yet.
-
-You can still launch the application by explicitly allowing it to run in the same warning dialog.
 
 ## Related projects, papers, and dependencies
 
