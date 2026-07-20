@@ -3,8 +3,7 @@
 Welcome to the release page for **Comp**. Thank you for your interest.
 
 > [!WARNING]
-> **Comp is currently in a very early stage of development.**
-> I do **not** recommend using it in production yet, as it may contain critical bugs and security vulnerabilities.
+> Comp is currently available as an early public alpha for evaluation and testing. Please keep backups of important files and use the application at your own discretion.
 
 If you would like to try the project and help shape its future direction, I would be very grateful for your feedback.
 
