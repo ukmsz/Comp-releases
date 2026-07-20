@@ -116,6 +116,7 @@ Replace the placeholder paths and `TARGET` in the following example:
   --port 19282 \
   --temp-dir "<path-to-temp-directory>/comp-worker" \
   --cpu-threads 0 \
+  --precision fp32 \
   --verbose
 ```
 
