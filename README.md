@@ -11,6 +11,25 @@ I have been working on **Comp** for more than a year and a half. This release st
 
 Your feedback will help define the direction of future development, as well as the pace at which the project can move forward.
 
+## A quick look
+
+<p align="center">
+  <a href="./screenshots/comp-main-interface.png">
+    <img
+      src="./screenshots/comp-main-interface.png"
+      alt="Comp main interface showing the viewer, node graph, properties panel, and timeline."
+      width="49%"
+    >
+  </a>
+  <a href="./screenshots/comp-import-images.png">
+    <img
+      src="./screenshots/comp-import-images.png"
+      alt="Importing images into a Comp project."
+      width="49%"
+    >
+  </a>
+</p>
+
 ## Community and Support
 
 - LinkedIn: https://www.linkedin.com/in/yuri-radaev
