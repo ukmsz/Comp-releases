@@ -19,54 +19,46 @@ Your feedback will help define the direction of future development, as well as t
 
 ## Downloads
 
-The current public alpha is **Comp v0.1.1**, released on July 14, 2026.
+The current public alpha is **Comp 0.1.2**, released on August 2, 2026.
 
 ### Comp application
 
 | Platform | Recommended download | Alternative package | SHA-256 checksums |
 |---|---|---|---|
-| Windows x64 | [Comp v0.1.1 — ZIP, 50.9 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-Release-20260714-1239.zip) | — | [Windows checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-Windows-SHA256SUMS.txt) |
-| macOS arm64 | [Comp v0.1.1 — DMG, 77.4 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-macOS-20260714-1235.dmg) | [ZIP, 67.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-macOS-20260714-1235.zip) | [macOS checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-v0.1.1/Comp-macOS-SHA256SUMS.txt) |
+| Windows x64 | [Comp 0.1.2 — ZIP, 51.9 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-windows-alpha-rev-f42e324.zip) | — | [Windows checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-windows-alpha-rev-f42e324.sha256) |
+| macOS arm64 | [Comp 0.1.2 — DMG, 78.5 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-macos-alpha-rev-f42e324.dmg) | [ZIP, 68.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-macos-alpha-rev-f42e324.zip) | [macOS checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-macos-alpha-rev-f42e324.sha256) |
+| Linux | [Comp 0.1.2 — AppImage, 76.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-linux-alpha-rev-f42e324.AppImage) | [tar.gz, 83.2 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-linux-alpha-rev-f42e324.tar.gz) | [Linux checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-linux-alpha-rev-f42e324.sha256) |
 
-- **Windows:** extract the ZIP before running Comp. The current build is
-  unsigned, so Windows may display a security warning. Verify the downloaded
-  file using the published checksum before allowing it to run.
-- **macOS:** the DMG is recommended for normal installation. The ZIP is
-  provided as an alternative package.
-- **AI features:** Comp itself does not require the AI Worker. Download the
-  Worker only if you specifically want to test the AI modules described below.
+- **Windows:** extract the ZIP before running Comp. The current build is unsigned, so Windows may display a security warning. Verify the downloaded file using the published checksum before allowing it to run.
+- **macOS:** the DMG is recommended for normal installation. The ZIP is provided as an alternative package.
+- **Linux:** the AppImage is recommended for most users. The `tar.gz` archive is provided as an alternative package.
+- **AI features:** Comp itself does not require the AI Worker. Download the Worker only if you specifically want to test the AI modules described below.
 
-[View the Comp v0.1.1 release page](https://github.com/ukmsz/Comp-releases/releases/tag/comp-v0.1.1)  
+[View the Comp 0.1.2 release page](https://github.com/ukmsz/Comp-releases/releases/tag/comp-0.1.2-alpha)
+
 [View all releases](https://github.com/ukmsz/Comp-releases/releases)
-
 
 ## Optional: Comp AI Worker Service
 
-Comp can be used as a standalone compositor. You do **not** need the AI Worker
-for standard compositing operations.
+Comp can be used as a standalone compositor. You do not need the AI Worker for standard compositing operations.
 
-The **Comp AI Worker Service** is a separate command-line component used by
-the optional AI modules currently available in Comp:
+The Comp AI Worker Service is a separate command-line component used by the optional AI modules currently available in Comp:
 
 - **SAM3** — rough image segmentation;
 - **MatAnyone2** — mask-edge refinement.
 
-For the simplest setup, run Comp and the Worker on the same machine. The Worker
-can also accept requests over a local network, but transferring image frames
-between machines may add significant overhead.
+For the simplest setup, run Comp and the Worker on the same machine. The Worker can also accept requests over a local network, but transferring image frames between machines may add significant overhead.
 
 ### Worker downloads
 
-The current Worker release is **v0.1.0**.
+The current Worker release is **v0.1.2**.
 
 | Platform | Recommended download | Alternative package | SHA-256 checksums |
 |---|---|---|---|
-| Windows, CPU/CUDA | [Worker v0.1.0 — ZIP, 1.71 GB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-Windows-CPU-CUDA-local-20260703-1158.zip) | — | [Windows checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-Windows-SHA256SUMS.txt) |
-| macOS, CPU/MPS | [Worker v0.1.0 — DMG, 47.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-macOS-20260703-1049.dmg) | [ZIP, 39.9 MB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-macOS-20260703-1049.zip) | [macOS checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.0/Worker-macOS-SHA256SUMS.txt) |
+| Windows, CPU/CUDA | [Worker v0.1.2 — ZIP, 1.71 GB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-Windows-CPU-CUDA-local-20260731-1520.zip) | — | [Windows checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-Windows-SHA256SUMS.txt) |
+| macOS, CPU/MPS | [Worker v0.1.2 — DMG, 47.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-20260802-1712.dmg) | [ZIP, 39.9 MB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-20260802-1712.zip) | [macOS checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-SHA256SUMS.txt) |
 
-[View the Worker v0.1.0 release page](https://github.com/ukmsz/Comp-releases/releases/tag/worker-v0.1.0)
-
-
+[View the Worker v0.1.2 release page](https://github.com/ukmsz/Comp-releases/releases/tag/worker-v0.1.2)
 > [!IMPORTANT]
 > Neural-network model weights are not included in the Worker packages.
 > Download the required files separately and place them in the folders shown
@@ -142,13 +134,15 @@ backtick.
 
 ## Supported platforms
 
-At the moment, **Comp** is available for Windows x64 and macOS arm64
+Comp currently provides packaged builds for:
 
-A Linux build is also planned. Before starting the Linux port, I would like to reach a stable MVP on the current platforms and use that version as a baseline for parity testing.
+- **Windows x64**
+- **macOS arm64** — Apple Silicon
+- **Linux x86_64**
 
-The Windows build may work through Wine, but I have not tested this.
+The Linux build is packaged and tested on **Rocky Linux 10.2**, which currently serves as the baseline Linux environment. It may also work on other recent x86_64 Linux distributions, but they have not yet been tested systematically. Compatibility with older distributions is not guaranteed.
 
-Development is currently done mostly on macOS. From time to time, I also use my old Windows PC to build and test the Windows version.
+Development is still done primarily on macOS. Windows and Linux builds are produced and tested on native systems, but testing coverage is currently limited, so platform-specific bug reports are especially helpful.
 
 ## GPU rendering
 
