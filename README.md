@@ -34,7 +34,7 @@ Your feedback will help define the direction of future development, as well as t
 
 - LinkedIn: https://www.linkedin.com/in/yuri-radaev
 - Buy Me a Coffee: https://buymeacoffee.com/yuri.r
-- Discord: https://discord.gg/caJSDWwXX
+- Discord: https://discord.gg/9vgz4Xv655
 
 ## Downloads
 
