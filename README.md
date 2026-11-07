@@ -52,9 +52,8 @@ Select a preview to open the full-size screenshot.
 - **macOS:** open the DMG for installation, or use the ZIP package.
 - **Linux:** see the [Linux baseline](#linux-baseline) below.
 
-See the [release notes](https://github.com/ukmsz/Comp-releases/releases/tag/comp-0.2.0-beta) for build details, or browse [all releases](https://github.com/ukmsz/Comp-releases/releases).
+See the [release notes](https://github.com/ukmsz/Comp-releases/releases/tag/comp-0.2.0-beta) for builds, or browse [all releases](https://github.com/ukmsz/Comp-releases/releases).
 
-Current releases are free. A paid advanced version is planned.
 
 ### Linux baseline
 
