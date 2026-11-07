@@ -1,127 +1,121 @@
-# Comp releases
+# Comp
 
-Welcome to the release page for **Comp**. Thank you for your interest.
+Independent node-based compositing software for everyone.
 
-> [!WARNING]
-> Comp is currently available as an early public alpha for evaluation and testing. Please keep backups of important files and use the application at your own discretion.
+Key, roto, paint, track and build 3D projections on Windows, macOS and Linux.
 
-If you would like to try the project and help shape its future direction, I would be very grateful for your feedback.
+[Downloads](#downloads) · [Features](#comp-02-features) · [AI setup](#ai-setup) · [Community](#community-and-support)
 
-I have been working on **Comp** for more than a year and a half. This release started as a simple personal side project, but after seeing some interest from the VFX community, I decided to package it into a more coherent form so that anyone interested can test it and share feedback.
+Current release: **Comp 0.2.0 beta**.
 
-Your feedback will help define the direction of future development, as well as the pace at which the project can move forward.
+![Comp workspace with a sunset composite, node graph and parameter controls.](./screenshots/comp-workspace.webp)
 
-## A quick look
+## Comp 0.2 features
 
-<p align="center">
-  <a href="./screenshots/comp-main-interface.png">
-    <img
-      src="./screenshots/comp-main-interface.png"
-      alt="Comp main interface showing the viewer, node graph, properties panel, and timeline."
-      width="49%"
-    >
-  </a>
-  <a href="./screenshots/comp-import-images.png">
-    <img
-      src="./screenshots/comp-import-images.png"
-      alt="Importing images into a Comp project."
-      width="49%"
-    >
-  </a>
-</p>
+Comp has 63 built-in nodes. The update adds 3D projections, local AI, new keying and image tools, and a redesigned interface.
 
-## Community and Support
+- **Workspace and sources.** Organize graphs with named, colored backdrops, Input thumbnails and routing Dots. Input opens the content browser by default, with sequence previews and AOV inspection. Compare different nodes in multiple Viewers and save workspace layouts.
+- **Keying and edge treatment.** Combine color samples with MultiKeyer, remove spill with Despill, apDespill or CCdespill, and recover foreground color with EdgeReconstruct. BlendSpill uses the final background to treat edges. CCkey adds local AI green-screen keying.
+- **RotoPaint.** Animate splines, adjust feathering, and paint or clone in the Viewer. RGB Motion Tracking stores motion in separate Motion Takes, so hand-animated shape keys remain editable. Mute, retrack, adjust strength or bake the motion into keys.
+- **Tracking, lenses and warps.** Track points or planar surfaces for stabilization and matchmove, and export CornerPin animation. LensDistortion includes nine 3DE models and imports supported 3DE Nuke-format lens exports, including animated coefficients. GridWarp, STmap and iDistort provide other warp tools.
+- **Color and channels.** Work in 32-bit float with layered EXRs, AOVs and OpenColorIO. Grade and HueCorrect provide color correction; HueCorrect uses hue-based curves for color, luminance and spill adjustment. Shuffle, ChannelMerge and ChannelModify route and edit channels.
+- **Color Picker.** Choose colors with an HSV wheel or CIE u′v′ diagram and gamut overlays. Edit HDR working-space RGBA, temperature, magenta/green balance and intensity. Sample original Viewer pixels or regions, save colors and copy full-precision values.
+- **Local AI.** AutoMatte uses SAM3 for subject selection and MatAnyone2 for temporal matte refinement. Both can run inside Comp or through an external Worker. CCkey runs locally. Compatible model bundles are supplied separately.
+- **3D projections and rendering.** Import FBX or Alembic camera animation and project images onto cards. 3D Renderer preserves source layers and adds depth plus per-object UV, motion-vector and alpha passes. It supports camera and card motion blur, overscan and Crop to Format.
+- **Filters and motion.** Generate optical-flow vectors with MotionVector and use them in VectorBlur. Defocus supports depth maps and a Varying Kernel for elliptical or swirling bokeh. Other filters include DirectionalBlur, EdgeBlur, Glow, GodRays and temporal Denoise.
+- **Animation and expressions.** Edit parameter curves and fractional-frame keys. Drive values with expressions that use frame context, composition settings or references to other parameters. Comp supports a defined subset of ExprTK and Tcl functions and commands, rather than the full languages.
+- **Smart cache.** Reuse unchanged node results when revisiting frames or adjusting downstream controls. Lossless cache compression fits more frames within the memory budget without changing pixels.
 
-- LinkedIn: https://www.linkedin.com/in/yuri-radaev
-- Buy Me a Coffee: https://buymeacoffee.com/yuri.r
-- Discord: https://discord.gg/9vgz4Xv655
+## Screenshots
+
+Select a preview to open the full-size screenshot.
+
+| 3D projections | Keying and edge treatment |
+| :---: | :---: |
+| [![3D projections](./screenshots/thumbnails/comp-3d-projections.webp)](./screenshots/comp-3d-projections.webp) | [![Keying and edge treatment](./screenshots/thumbnails/comp-keying.webp)](./screenshots/comp-keying.webp) |
+| **AutoMatte** | **[Color Picker](./screenshots/comp-color-picker.webp) and [HueCorrect](./screenshots/comp-huecorrect.webp)** |
+| [![AutoMatte](./screenshots/thumbnails/comp-automatte.webp)](./screenshots/comp-automatte.webp) | [![Color Picker and HueCorrect side by side](./screenshots/thumbnails/comp-color-tools.webp)](./screenshots/comp-color-tools.webp) |
+| **Graph editor and backdrops** | **Content browser** |
+| [![Graph editor and backdrops](./screenshots/thumbnails/comp-node-graph.webp)](./screenshots/comp-node-graph.webp) | [![Content browser](./screenshots/thumbnails/comp-content-browser.webp)](./screenshots/comp-content-browser.webp) |
 
 ## Downloads
 
-The current public alpha is **Comp 0.1.2**, released on August 2, 2026.
+**Comp 0.2.0 beta** · Released November 6, 2026 · Free to use
 
-### Comp application
+| Platform | Download | Alternative | SHA-256 |
+| --- | --- | --- | --- |
+| Windows x64 | [ZIP · 1.89 GB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-windows-beta-rev-7dab684.zip) | — | [Checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-windows-beta-rev-7dab684.sha256) |
+| macOS Apple Silicon | [DMG · 96.3 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-macos-beta-rev-7dab684.dmg) | [ZIP · 82.5 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-macos-beta-rev-7dab684.zip) | [Checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-macos-beta-rev-7dab684.sha256) |
+| Linux x86-64-v2 | [AppImage · 2.06 GB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-linux-beta-rev-7dab684.AppImage) | [tar.xz · 1.97 GB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-linux-beta-rev-7dab684.tar.xz) | [Checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-linux-beta-rev-7dab684.sha256) |
 
-| Platform | Recommended download | Alternative package | SHA-256 checksums |
-|---|---|---|---|
-| Windows x64 | [Comp 0.1.2 — ZIP, 51.9 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-windows-alpha-rev-f42e324.zip) | — | [Windows checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-windows-alpha-rev-f42e324.sha256) |
-| macOS arm64 | [Comp 0.1.2 — DMG, 78.5 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-macos-alpha-rev-f42e324.dmg) | [ZIP, 68.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-macos-alpha-rev-f42e324.zip) | [macOS checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-macos-alpha-rev-f42e324.sha256) |
-| Linux | [Comp 0.1.2 — AppImage, 76.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-linux-alpha-rev-f42e324.AppImage) | [tar.gz, 83.2 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-linux-alpha-rev-f42e324.tar.gz) | [Linux checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.1.2-alpha/comp-0.1.2-linux-alpha-rev-f42e324.sha256) |
+- **Windows:** extract the ZIP before running Comp.
+- **macOS:** open the DMG for installation, or use the ZIP package.
+- **Linux:** see the [Linux baseline](#linux-baseline) below.
 
-- **Windows:** extract the ZIP before running Comp. The current build is unsigned, so Windows may display a security warning. Verify the downloaded file using the published checksum before allowing it to run.
-- **macOS:** the DMG is recommended for normal installation. The ZIP is provided as an alternative package.
-- **Linux:** the AppImage is recommended for most users. The `tar.gz` archive is provided as an alternative package.
-- **AI features:** Comp itself does not require the AI Worker. Download the Worker only if you specifically want to test the AI modules described below.
+See the [release notes](https://github.com/ukmsz/Comp-releases/releases/tag/comp-0.2.0-beta) for build details, or browse [all releases](https://github.com/ukmsz/Comp-releases/releases).
 
-[View the Comp 0.1.2 release page](https://github.com/ukmsz/Comp-releases/releases/tag/comp-0.1.2-alpha)
+Current releases are free. A paid advanced version is planned.
 
-[View all releases](https://github.com/ukmsz/Comp-releases/releases)
+### Linux baseline
 
-## Optional: Comp AI Worker Service
+| Requirement | Baseline |
+| --- | --- |
+| CPU | 64-bit Intel/AMD, **x86-64-v2** |
+| glibc | **2.34+** |
+| C++ runtime | `GLIBCXX_3.4.29`, `CXXABI_1.3.13` |
+| Target distributions | **Ubuntu 22.04+**, **Debian 12+**, **Rocky/AlmaLinux 9+** |
 
-Comp can be used as a standalone compositor. You do not need the AI Worker for standard compositing operations.
+## AI setup
 
-The Comp AI Worker Service is a separate command-line component used by the optional AI modules currently available in Comp:
+### Local AI in Comp 0.2
 
-- **SAM3** — rough image segmentation;
-- **MatAnyone2** — mask-edge refinement.
+The 0.2 build includes the local runtime.
 
-For the simplest setup, run Comp and the Worker on the same machine. The Worker can also accept requests over a local network, but transferring image frames between machines may add significant overhead.
+[Download the AI model bundle (ZIP)](https://huggingface.co/buckets/kamaz01/comp_bundles/resolve/comp_ai_bundles.zip). The same archive supports local AI in Comp 0.2 and AI Worker 0.1.2.
 
-### Worker downloads
+1. Extract `comp_ai_bundles.zip`, keeping each model folder's manifest and required assets together.
+2. Select the extracted `sam3` and `mat2` folders in **Local AI settings** for the models you want to use.
+3. Enable the models and save. Resolve any initialization error before using them.
+4. For CCkey, choose a `1024` or `2048` folder inside `cckey_resolutions_mps` on macOS or `cckey_resolutions_cuda` on Windows or Linux. Match the folder to the inference resolution. The output keeps the source dimensions.
 
-The current Worker release is **v0.1.2**.
+Local AI uses Apple Metal (MPS) on macOS and NVIDIA CUDA on Windows or Linux. AutoMatte can use an external Worker when its local model is disabled. If an enabled local model fails, Comp reports the error rather than switching to the Worker. CCkey runs locally only.
 
-| Platform | Recommended download | Alternative package | SHA-256 checksums |
-|---|---|---|---|
-| Windows, CPU/CUDA | [Worker v0.1.2 — ZIP, 1.71 GB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-Windows-CPU-CUDA-local-20260731-1520.zip) | — | [Windows checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-Windows-SHA256SUMS.txt) |
-| macOS, CPU/MPS | [Worker v0.1.2 — DMG, 47.8 MB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-20260802-1712.dmg) | [ZIP, 39.9 MB](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-20260802-1712.zip) | [macOS checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-SHA256SUMS.txt) |
+### Optional AI Worker 0.1.2
 
-[View the Worker v0.1.2 release page](https://github.com/ukmsz/Comp-releases/releases/tag/worker-v0.1.2)
-> [!IMPORTANT]
-> Neural-network model weights are not included in the Worker packages.
-> Download the required files separately and place them in the folders shown
-> below.
+Worker 0.1.2 runs SAM3 and MatAnyone2 in a separate process for AutoMatte. Run it on the same computer or another machine; remote processing includes frame-transfer time. Standard compositing and local AI do not need the Worker.
 
+| Platform | Download | Alternative | SHA-256 |
+| --- | --- | --- | --- |
+| Windows, CPU/CUDA | [ZIP](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-Windows-CPU-CUDA-local-20260731-1520.zip) | — | [Checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-Windows-SHA256SUMS.txt) |
+| macOS, CPU/MPS | [DMG](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-20260802-1712.dmg) | [ZIP](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-20260802-1712.zip) | [Checksums](https://github.com/ukmsz/Comp-releases/releases/download/worker-v0.1.2/Worker-macOS-SHA256SUMS.txt) |
 
-### Required model files
+[Worker v0.1.2 release notes](https://github.com/ukmsz/Comp-releases/releases/tag/worker-v0.1.2)
 
-| Module | Download | Destination | Final filename |
-|---|---|---|---|
-| MatAnyone2 | [Download `mat2_bundle.pt`](https://huggingface.co/kamaz01/MatAnyone2/resolve/main/mat2_bundle.pt?download=true) | `<worker-installation-root>/family_bundles/mat2/models/` | `mat2_bundle.pt` |
-| SAM3 tokenizer | [Download `bpe_simple_vocab_16e6.txt.gz`](https://huggingface.co/kamaz01/CompAutoMatte_sam3/resolve/main/bpe_simple_vocab_16e6.txt.gz?download=true) | `<worker-installation-root>/family_bundles/sam3/assets/` | `bpe_simple_vocab_16e6.txt.gz` |
-| SAM3.1 model | [Download `sam3_bundle.pt`](https://huggingface.co/kamaz01/CompAutoMatte_sam3/resolve/main/sam3_bundle.pt?download=true) | `<worker-installation-root>/family_bundles/sam3/models/` | `sam3_bundle.pt` |
+Model weights are not included in the Worker packages. [Download the model bundle](https://huggingface.co/buckets/kamaz01/comp_bundles/resolve/comp_ai_bundles.zip) and extract it. Worker 0.1.2 uses its `mat2` and `sam3` folders; the CCkey folders are for Comp 0.2.
 
-The resulting directory structure should look like this:
+Keep these folders and files together:
 
 ```text
-<worker-installation-root>/
-└── family_bundles/
+<models-folder>/
+└── comp_ai_bundles/
     ├── mat2/
+    │   ├── bundle_manifest.txt
     │   └── models/
     │       └── mat2_bundle.pt
     └── sam3/
+        ├── bundle_manifest.txt
         ├── assets/
         │   └── bpe_simple_vocab_16e6.txt.gz
         └── models/
             └── sam3_bundle.pt
 ```
 
-If Hugging Face asks you to sign in, request access, or accept model repository
-conditions, complete that step before downloading the file.
-
-Third-party model files have their own licenses and access conditions. Review
-those conditions before downloading or using the models.
-
-
-### Starting the Worker
-
-Replace the placeholder paths and `TARGET` in the following example:
+Replace the placeholder paths and `TARGET`:
 
 ```text
 "<path-to-worker-executable>" serve \
-  --family-bundle "mat2=<worker-installation-root>/family_bundles/mat2" \
-  --family-bundle "sam3=<worker-installation-root>/family_bundles/sam3" \
+  --family-bundle "mat2=<models-folder>/comp_ai_bundles/mat2" \
+  --family-bundle "sam3=<models-folder>/comp_ai_bundles/sam3" \
   --target TARGET \
   --bind-host 127.0.0.1 \
   --port 19282 \
@@ -131,107 +125,55 @@ Replace the placeholder paths and `TARGET` in the following example:
   --verbose
 ```
 
-Use one of the following target values:
+Use `cuda` for an NVIDIA GPU, `mps` for an Apple GPU on macOS, or `cpu` for CPU processing. `127.0.0.1` limits connections to the same computer. Enter the Worker's address in Comp's Worker settings.
 
-- `cuda` — NVIDIA GPU;
-- `mps` — Apple GPU on macOS;
-- `cpu` — CPU processing.
-
-The example uses `127.0.0.1`, which makes the Worker accessible only from the
-same machine.
-
-For a reduced-memory test, add:
+To reduce memory use, add:
 
 ```text
 --max-propagation-history-depth 2
 --max-mem-frames 2
 ```
 
-The command above uses Unix-style line continuation. In PowerShell, either put
-the command on one line or replace each trailing `\` with a PowerShell
-backtick.
+The command uses Unix-style line continuation. In PowerShell, put it on one line or replace each trailing `\` with a PowerShell backtick.
 
-## Supported platforms
+Follow each model's access and license terms. Hugging Face may require sign-in or acceptance of repository conditions before downloading.
 
-Comp currently provides packaged builds for:
+## Current limits
 
-- **Windows x64**
-- **macOS arm64** — Apple Silicon
-- **Linux x86_64**
+- Compositing nodes run on the CPU. Viewer display is GPU-accelerated; AI processing has its own GPU runtime.
+- General Nuke project and gizmo import is not supported. Lens import accepts supported 3DE Nuke-format exports.
+- OFX plugins are not supported.
+- 3D scenes contain cameras and cards. Camera import supports perspective cameras; Alembic import uses Ogawa.
+- Animated raster-to-shape conversion in RotoPaint is experimental.
 
-The Linux build is packaged and tested on **Rocky Linux 10.2**, which currently serves as the baseline Linux environment. It may also work on other recent x86_64 Linux distributions, but they have not yet been tested systematically. Compatibility with older distributions is not guaranteed.
+## Community and support
 
-Development is still done primarily on macOS. Windows and Linux builds are produced and tested on native systems, but testing coverage is currently limited, so platform-specific bug reports are especially helpful.
+For bug reports, include your Comp build, operating system and steps to reproduce the issue.
 
-## GPU rendering
+- [Discord](https://discord.gg/9vgz4Xv655) — questions, workflows and bug reports.
+- [LinkedIn](https://www.linkedin.com/in/yuri-radaev) — project updates from Yuri Radaev.
+- [Support development](https://buymeacoffee.com/yuri.r) — help fund work on Comp.
 
-At the moment, **Comp** does not use GPU acceleration for compositing operations. Only image drawing in the viewer is accelerated.
+## License and credits
 
-I have not yet chosen the backend for GPU compositing. The cross-platform **Qt RHI** looks like the simplest solution, but it would introduce Qt dependencies into the headless renderer.
+Comp uses a proprietary license. See [COMP-LICENSE.txt](COMP-LICENSE.txt) and [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) for the application terms and dependency notices.
 
-One possible option would be to simply not support GPU acceleration in headless mode, but this is still open for discussion.
+**CCkey is based on [Corridor Crew Keyer 1](https://github.com/nikopueringer/CorridorKey).** AutoMatte uses [SAM3](https://github.com/facebookresearch/sam3) and [MatAnyone2](https://github.com/pq-yang/MatAnyone2). AI models have separate licenses and access conditions.
 
-A more hardcore option would be to write three separate implementations for Metal, Vulkan and CUDA, this would provide speed, flexibility, and fewer limitations. However, before doing that, the current feature set needs to be stabilized so that rendering is predictable and can be used as a reference for comparison with the GPU implementation.
+### Related projects, papers and dependencies
 
-## Approximate roadmap for Comp
-
-- Release the first alpha version.
-- Collect feedback and fix bugs.
-- Release the second alpha version.
-- If no critical bugs are found, freeze this version as the reference for the Linux port.
-- Hold a vote and choose a Linux distribution for development and testing.
-- Release the second alpha version for Linux.
-- Fix bugs and freeze that version as the reference.
-- Develop and integrate GPU rendering identical to CPU rendering.
-- Release the third alpha version.
-
-## Approximate roadmap for AI Worker Service
-
-- Finish implementing two new modules:
-  - Corridor Crew keyer
-  - DVD depth estimator
-
-## Related projects, papers, and dependencies
-
-- [MatAnyone2][matanyone2-github] ([project page][matanyone2-page])
-- [Facebook/SAM3][sam3-github] ([Meta research page][sam3-meta], [SAM3.1 model weights][sam31-hf])
-- [OpenCV][opencv-home] ([GitHub][opencv-github])
-- [V-BM3D / VBM3D paper][vbm3d-paper]
-- [VBM3D implementation paper][vbm3d-ipol]
-- [JSON][json-org] ([ECMA-404][json-ecma404])
-- [libtorch / PyTorch C++ API][libtorch-cpp]
-- [C++17 / ISO/IEC 14882:2017][cpp17-iso] ([cppreference C++17 overview][cpp17-cppreference])
-- [Qt RHI][qt-rhi]
-- [Qt Advanced Docking System — ADS][qt-ads]
-- [nlohmann/json][nlohmann-json]
-- [ExprTk][exprtk]
-- [Tcl/Tk][tcltk]
-- [OpenEXR][openexr] / [Imath][imath]
-- [OpenMP][openmp]
-
-[matanyone2-github]: https://github.com/pq-yang/MatAnyone2
-[matanyone2-page]: https://pq-yang.github.io/projects/MatAnyone2/
-[sam3-github]: https://github.com/facebookresearch/sam3
-[sam3-meta]: https://ai.meta.com/research/sam3/
-[sam31-hf]: https://huggingface.co/facebook/sam3.1
-[opencv-home]: https://opencv.org/
-[opencv-github]: https://github.com/opencv/opencv
-[vbm3d-paper]: https://www.eurasip.org/Proceedings/Eusipco/Eusipco2007/Papers/A1L-G03.pdf
-[vbm3d-ipol]: https://arxiv.org/abs/2001.01802
-[json-org]: https://json.org/
-[json-ecma404]: https://ecma-international.org/publications-and-standards/standards/ecma-404/
-[libtorch-cpp]: https://docs.pytorch.org/cppdocs/
-[cpp17-iso]: https://www.iso.org/standard/68564.html
-[cpp17-cppreference]: https://cppreference.com/cpp/17
-[qt-rhi]: https://doc.qt.io/qt-6/topics-graphics.html
-[qt-ads]: https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System
-[nlohmann-json]: https://github.com/nlohmann/json
-[exprtk]: https://www.partow.net/programming/exprtk/index.html
-[tcltk]: https://www.tcl-lang.org/
-[openexr]: https://github.com/AcademySoftwareFoundation/openexr
-[imath]: https://github.com/AcademySoftwareFoundation/Imath
-[openmp]: https://www.openmp.org/specifications/
-
-
-
-
+- [MatAnyone2](https://github.com/pq-yang/MatAnyone2) ([project page](https://pq-yang.github.io/projects/MatAnyone2/))
+- [SAM3](https://github.com/facebookresearch/sam3) ([Meta research page](https://ai.meta.com/research/sam3/), [SAM3.1 model weights](https://huggingface.co/facebook/sam3.1))
+- [OpenCV](https://opencv.org/) ([GitHub](https://github.com/opencv/opencv))
+- [V-BM3D / VBM3D paper](https://www.eurasip.org/Proceedings/Eusipco/Eusipco2007/Papers/A1L-G03.pdf)
+- [VBM3D implementation paper](https://arxiv.org/abs/2001.01802)
+- [JSON](https://json.org/) ([ECMA-404](https://ecma-international.org/publications-and-standards/standards/ecma-404/))
+- [libtorch / PyTorch C++ API](https://docs.pytorch.org/cppdocs/)
+- [C++17 / ISO/IEC 14882:2017](https://www.iso.org/standard/68564.html) ([cppreference](https://cppreference.com/cpp/17))
+- [Qt RHI](https://doc.qt.io/qt-6/topics-graphics.html)
+- [Qt Advanced Docking System](https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System)
+- [nlohmann/json](https://github.com/nlohmann/json)
+- [ExprTk](https://www.partow.net/programming/exprtk/index.html)
+- [Tcl/Tk](https://www.tcl-lang.org/)
+- [OpenEXR](https://github.com/AcademySoftwareFoundation/openexr) / [Imath](https://github.com/AcademySoftwareFoundation/Imath)
+- [OpenMP](https://www.openmp.org/specifications/)
