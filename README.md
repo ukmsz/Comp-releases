@@ -47,13 +47,7 @@ Select a preview to open the full-size screenshot.
 | Windows x64 | [ZIP · 1.89 GB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-windows-beta-rev-7dab684.zip) | — | [Checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-windows-beta-rev-7dab684.sha256) |
 | macOS Apple Silicon | [DMG · 96.3 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-macos-beta-rev-7dab684.dmg) | [ZIP · 82.5 MB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-macos-beta-rev-7dab684.zip) | [Checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-macos-beta-rev-7dab684.sha256) |
 | Linux x86-64-v2 | [AppImage · 2.06 GB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-linux-beta-rev-7dab684.AppImage) | [tar.xz · 1.97 GB](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-linux-beta-rev-7dab684.tar.xz) | [Checksums](https://github.com/ukmsz/Comp-releases/releases/download/comp-0.2.0-beta/comp-0.2.0-linux-beta-rev-7dab684.sha256) |
-
-- **Windows:** extract the ZIP before running Comp.
-- **macOS:** open the DMG for installation, or use the ZIP package.
-- **Linux:** see the [Linux baseline](#linux-baseline) below.
-
-See the [release notes](https://github.com/ukmsz/Comp-releases/releases/tag/comp-0.2.0-beta) for builds, or browse [all releases](https://github.com/ukmsz/Comp-releases/releases).
-
+[Download the AI model bundle (ZIP)](https://huggingface.co/buckets/kamaz01/comp_bundles/resolve/comp_ai_bundles.zip). 
 
 ### Linux baseline
 
@@ -70,7 +64,7 @@ See the [release notes](https://github.com/ukmsz/Comp-releases/releases/tag/comp
 
 The 0.2 build includes the local runtime.
 
-[Download the AI model bundle (ZIP)](https://huggingface.co/buckets/kamaz01/comp_bundles/resolve/comp_ai_bundles.zip). The same archive supports local AI in Comp 0.2 and AI Worker 0.1.2.
+The same archive supports local AI in Comp 0.2 and AI Worker 0.1.2.
 
 1. Extract `comp_ai_bundles.zip`, keeping each model folder's manifest and required assets together.
 2. Select the extracted `sam3` and `mat2` folders in **Local AI settings** for the models you want to use.
